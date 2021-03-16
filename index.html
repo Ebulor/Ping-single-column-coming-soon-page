@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Ping single column coming soon page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="logo"><img src="images/logo.svg" alt="logo"></div>
+        <div class="text">
+            <h3>We are launching <span>soon!</span></h3>
+            <p>Subscribe and get notified</p>
+        </div>
+        <div class="buttons">
+            <form>
+                <div class="email">    
+                    <input id="email" type="text" placeholder="Your email address...">
+                    <span id="error"></span>
+                </div>
+                <input id="button" type="button" onclick="errorMessage()" value="Notify Me">
+            </form>
+        </div>
+        <div class="hero-img"><img src="images/illustration-dashboard.png" alt="illustration"></div>
+        <div class="footer">
+            <div class="footer_social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>                
+                <a href="#"><i class="fab fa-twitter"></i></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>  
+            <p>© Copyright Ping. All rights reserved.</p>
+        </div>
+    </div>
+
+
+    <script>
+        var email = document.getElementById("email");
+        
+        function errorMessage(){
+            var x = document.getElementById("error");
+            var emailExpression = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+            if (!emailExpression.test(email.value) || email.value ==""){ 
+                email.style.border = "1px solid red";  
+                x.style.display = "block";      
+                x.innerHTML = "Please provide a valid email address";            
+            } 
+            else {
+                email.style.border = "1px solid hsl(223, 87%, 63%)";
+                x.style.display = "none";
+                x.innerHTML = "";
+                
+                
+            }
+        }
+    </script>
+</body>
+</html>
